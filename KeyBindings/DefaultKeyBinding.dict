@@ -1,0 +1,163 @@
+{
+/* Keybindings for emacs emulation.  Compiled by Jacob Rus.
+ *
+ * This is a pretty good set, especially considering that many emacs bindings
+ * such as C-o, C-a, C-e, C-k, C-y, C-v, C-f, C-b, C-p, C-n, C-t, and
+ * perhaps a few more, are already built into the system.
+ *
+ * BEWARE:
+ * This file uses the Option key as a meta key.  This has the side-effect
+ * of overriding Mac OS keybindings for the option key, which generally
+ * make common symbols and non-english letters.
+ */
+        
+    /* Ctrl shortcuts */
+    "^/"        = "undo:";                          /* C-/          되돌리기 */
+    "^_"        = "undo:";                          /* C-_          되돌리기 */
+    "^ "        = "setMark:";                       /* C-Spc        Set mark */
+    "^w"        = "deleteToMark:";                  /* C-w          Delete to mark */
+    "^ㅠ"       = "moveLeft:";                      /* C-b          커서 왼쪽으로 이동 */
+    "$^ㅠ"      = "moveLeftAndModifySelection:";
+    "$^b"       = "moveLeftAndModifySelection:";
+    "^ㄹ"       = "moveRight:";                     /* C-f          커서 오른쪽으로 이동 */
+    "$^ㄹ"      = "moveRightAndModifySelection:";              
+    "$^f"       = "moveRightAndModifySelection:";              
+    "^ㅜ"       = "moveDown:";                      /* C-n          커서 아래로 이동 */
+    "^ㅔ"       = "moveUp:";                        /* C-p          커서 위로 이동	*/
+    "^a"        = "moveToBeginningOfLine:";         /* C-a          커서 맨 앞으로 이동 */ 
+    "^ㅁ"       = "moveToBeginningOfLine:";         
+    "^e"        = "moveToEndOfLine:";               /* C-e          커서 맨 뒤로 이동 */   
+    "^ㄷ"       = "moveToEndOfLine:";               
+    "^k"        = "deleteToEndOfLine:";             /* C-k          커서 뒤로 전부 삭제 */   
+    "^ㅏ"       = "deleteToEndOfLine:";             
+    "^u"        = "deleteToBeginningOfLine:";       /* C-d          커서 앞으로 전부 삭제 */
+    "^ㅕ"       = "deleteToBeginningOfLine:";
+    "^d"        = "deleteForward:";                 /* C-d          커서 뒤로 한칸 삭제 */   
+    "^ㅇ"       = "deleteForward:";             	
+
+
+    /* Meta shortcuts */
+    "~f"        = "moveWordForward:";               /* M-f          뒷 단어 이동 */
+    "~ㄹ"       = "moveWordForward:";               
+    "~b"        = "moveWordBackward:";              /* M-b          앞 단어 이동 */
+    "~ㅠ"       = "moveWordBackward:";              
+    "~d"        = "deleteWordForward:";             /* M-d          뒷 단어 삭제 */
+    "~ㅇ"       = "deleteWordForward:";             
+    "~\U007F"   = "deleteWordBackward:";            /* M-Bksp       앞 단어 삭제 */
+    "~w"        = "copy:";                          /* M-w */
+    "~ㅈ"       = "copy:";
+    "~c"        = ( "capitalizeWord:",              /* M-c          첫 글자만 대문자로 변경 */
+                    "moveForward:",
+                    "moveForward:");                                
+    "~ㅊ"        = ( "capitalizeWord:",
+                    "moveForward:",
+                    "moveForward:");                                
+    "~u"        = ( "uppercaseWord:",               /* M-u          대문자로 변경 (영어는 동작안함) */
+                    "moveForward:",
+                    "moveForward:");
+    "~ㅕ"        = ( "uppercaseWord:",               
+                    "moveForward:",
+                    "moveForward:");
+    "~l"        = ( "lowercaseWord:",               /* M-l          소문자로 변경 */
+                    "moveForward:",
+                    "moveForward:");
+    "~ㅣ"        = ( "lowercaseWord:",
+                    "moveForward:",
+                    "moveForward:");
+
+
+    /* C-x shortcuts */
+    "^x" = {
+        "^x"    = "swapWithMark:";                  /* C-x C-x      Swap with mark */
+        "^m"    = "selectToMark:";                  /* C-x C-m      Select to mark*/
+    };
+
+}
+
+/* 
+* Key Modifiers
+* 
+*   ^ : Ctrl
+*   $ : Shift
+*   ~ : Option (Alt)
+*   @ : Command (Apple)
+*   # : Numeric Keypad 
+*/
+
+/*
+* Supported Actions
+*
+*  alignCenter:                                        newDocument:
+*  alignJustified:                                     openDocument:
+*  alignLeft:                                          orderBack:
+*  alignRight:                                         orderFront:
+*  breakUndoCoalescing                                 orderFrontLinkPanel:
+*  cancelOperation:                                    orderFrontListPanel:
+*  capitalizeWord:                                     orderFrontSpacingPanel:
+*  center                                              orderFrontTablePanel:
+*  centerSelectionInVisibleArea:                       outline:
+*  changeCaseOfLetter:                                 pageDown:
+*  checkSpelling:                                      pageUp:
+*  clearRecentDocuments:                               paste:
+*  complete:                                           pasteAsPlainText:
+*  copy:                                               pasteAsRichText:
+*  copyFont:                                           pasteFont:
+*  copyRuler:                                          pasteRuler:
+*  cut:                                                performClose:
+*  delete:                                             performMiniaturize:
+*  deleteBackward:                                     performZoom:
+*  deleteBackwardByDecomposingPreviousCharacter:       printDocument:
+*  deleteForward:                                      raiseBaseline:
+*  deleteToBeginningOfLine:                            revertDocumentToSaved:
+*  deleteToBeginningOfParagraph:                       runPageLayout:
+*  deleteToEndOfLine:                                  saveAllDocuments:
+*  deleteToEndOfParagraph:                             saveDocument:
+*  deleteToMark:                                       saveDocumentAs:
+*  deleteWordBackward:                                 saveDocumentTo:
+*  deleteWordForward:                                  scrollLineDown:
+*  hide:                                               scrollLineUp:
+*  ignoreSpelling:                                     scrollPageDown:
+*  indent:                                             scrollPageUp:
+*  insertBacktab:                                      selectAll:
+*  insertContainerBreak:                               selectLine:
+*  insertLineBreak:                                    selectParagraph:
+*  insertNewline:                                      selectToMark:
+*  insertNewlineIgnoringFieldEditor:                   selectWord:
+*  insertParagraphSeparator:                           setMark:
+*  insertTab:                                          showContextHelp:
+*  insertTabIgnoringFieldEditor:                       showGuessPanel:
+*  insertText:                                         startSpeaking:
+*  loosenKerning:                                      stopSpeaking:
+*  lowerBaseline:                                      subscript:
+*  lowercaseWord:                                      superscript:
+*  moveBackward:                                       swapWithMark:
+*  moveBackwardAndModifySelection:                     terminate:
+*  moveDown:                                           tightenKerning:
+*  moveDownAndModifySelection:                         toggleBaseWritingDirection:
+*  moveForward:                                        toggleContinuousSpellChecking:
+*  moveForwardAndModifySelection:                      toggleRuler:
+*  moveLeft:                                           transpose:
+*  moveLeftAndModifySelection:                         transposeWords:
+*  moveRight:                                          turnOffKerning:
+*  moveRightAndModifySelection:                        turnOffLigatures:
+*  moveToBeginningOfDocument:                          underline:
+*  moveToBeginningOfDocumentAndModifySelection:        unscript:
+*  moveToBeginningOfLine:                              uppercaseWord:
+*  moveToBeginningOfLineAndModifySelection:            useAllLigatures:
+*  moveToBeginningOfParagraph:                         useStandardKerning:
+*  moveToEndOfDocument:                                useStandardLigatures:
+*  moveToEndOfDocumentAndModifySelection:              yank:
+*  moveToEndOfLineAndModifySelection:
+*  moveToEndOfLine:
+*  moveToEndOfParagraph:
+*  moveUp:
+*  moveUpAndModifySelection:
+*  moveWordBackward:
+*  moveWordBackwardAndModifySelection:
+*  moveWordForward:
+*  moveWordForwardAndModifySelection:
+*  moveWordLeft:
+*  moveWordLeftAndModifySelection:
+*  moveWordRight:
+*  moveWordRightAndModifySelection:
+/*
