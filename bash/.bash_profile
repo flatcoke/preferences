@@ -1,7 +1,7 @@
 alias ls="ls -G"
 alias ll="ls -al -G"
 alias vi="vim"
-alias env=". env/bin/activate"
+alias venv=". venv/bin/activate"
 alias python="python3"
 alias pip="pip3"
 alias flatcoke="ssh -i ~/.ssh/pems/LightsailDefaultKey-ap-northeast-2.pem ubuntu@flatcoke.com"
