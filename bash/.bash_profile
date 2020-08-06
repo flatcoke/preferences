@@ -32,3 +32,11 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # for Hangle is breaked
 LC_CTYPE="ko_KR.UTF-8"
+
+# Go development
+export GOPATH="${HOME}/.go"
+# export GOROOT="$(brew --prefix golang)/libexec"
+export GOROOT="${HOME}/go"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+test -d "${GOPATH}" || mkdir "${GOPATH}"
+test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
