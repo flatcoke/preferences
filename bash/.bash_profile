@@ -43,3 +43,7 @@ test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# openJDK
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
